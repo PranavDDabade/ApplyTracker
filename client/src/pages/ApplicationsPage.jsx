@@ -52,6 +52,13 @@ export default function ApplicationsPage() {
     [updateParams]
   );
 
+  const handleLimitChange = useCallback(
+    (e) => {
+      updateParams({ limit: Number(e.target.value), page: 1 });
+    },
+    [updateParams]
+  );
+
   const hasActiveFilters = params.q || params.status;
 
   // Delete flow
@@ -121,6 +128,24 @@ export default function ApplicationsPage() {
               Clear
             </button>
           )}
+        </div>
+        <div className="filter-limit">
+          <label htmlFor="limit-select" className="filter-limit-label">
+            Show
+          </label>
+          <select
+            id="limit-select"
+            className="form-input filter-limit-select"
+            value={params.limit}
+            onChange={handleLimitChange}
+            aria-label="Results per page"
+          >
+            <option value={5}>5</option>
+            <option value={10}>10</option>
+            <option value={25}>25</option>
+            <option value={50}>50</option>
+          </select>
+          <span className="filter-limit-label">per page</span>
         </div>
       </form>
 

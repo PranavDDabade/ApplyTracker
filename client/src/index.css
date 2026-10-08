@@ -547,7 +547,18 @@ ul { list-style: none; }
   .filter-bar    { flex-direction: column; align-items: stretch; gap: var(--sp-3); }
   .filter-status { width: 100%; }
   .filter-btns   { justify-content: flex-start; }
+  .filter-limit  { justify-content: flex-start; }
 }
+
+.filter-limit {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.filter-limit-label  { font-size: 0.85rem; color: var(--c-text-muted); white-space: nowrap; }
+.filter-limit-select { width: 70px; padding: 0.575rem 0.5rem; }
 
 /* ─── Desktop table ─────────────────────────────────────────────────────────── */
 .table-wrapper {
